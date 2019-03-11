@@ -1,0 +1,45 @@
+
+<html>
+   <head>
+      <title>DHTML dropShadow and light Filters</title>
+
+      <script type = "text/javascript">
+         <!--
+         function setlight( ) 
+         {
+            dsImg.filters( "light" ).addPoint( 150, 150,
+               125, 255, 255, 255, 100 );
+         }
+
+         function run() 
+         {
+            eX = event.offsetX;
+            eY = event.offsetY;
+
+            x1 = Math.round( 
+               eX-event.srcElement.width / 2, 0 );
+            y1 = Math.round( 
+               eY-event.srcElement.height / 2, 0 );
+
+            dsImg.filters( "dropShadow" ).offx = 
+               x1 / -3;
+            dsImg.filters( "dropShadow" ).offy = 
+               y1 / -3;
+
+            dsImg.filters( "light" ).moveLight( 
+               0, eX, eY, 125, 1 );
+         }
+         // -->
+      </script>
+   </head>
+
+   <body onload = "setlight()" style = "background-color: green">
+
+      <img id = "dsImg" src = "e:\vineel\photos\bumika\b1.jpg" 
+         style = "top: 100; left: 100; filter: dropShadow( 
+         offx = 0, offy = 0, color = black ) light()" 
+         onmousemove = "run()" alt = "VINEEL KUMAR" />
+
+   </body>
+</html>
+

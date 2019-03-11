@@ -1,0 +1,11 @@
+hello 
+
+hai
+
+welcome to python
+
+have a great day
+
+be cheerful
+
+welcome to Anaconda

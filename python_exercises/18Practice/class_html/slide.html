@@ -1,0 +1,88 @@
+
+
+<html>
+   <head>
+      <title>24 DHTML Transitions</title>
+
+   <script type = "text/javascript">
+      <!--
+      var transitionName = 
+        ["Box In", "Box Out",
+         "Circle In", "Circle Out",
+         "Wipe Up", "Wipe Down", "Wipe Right", "Wipe Left",
+         "Vertical Blinds", "Horizontal Blinds",
+         "Checkerboard Across", "Checkerboard Down",
+         "Random Dissolve",
+         "Split Vertical In", "Split Vertical Out",
+         "Split Horizontal In", "Split Horizontal Out",
+         "Strips Left Down", "Strips Left Up",
+         "Strips Right Down", "Strips Right Up",
+         "Random Bars Horizontal", "Random Bars Vertical",
+         "Random"];
+
+      var counter = 0;
+      var whichImage = true;
+
+      function blend() 
+      {
+         if ( whichImage ) {
+            image1.filters( "revealTrans" ).apply();
+            image1.style.visibility = "hidden";
+            image1.filters( "revealTrans" ).play();
+         }
+         else {
+            image2.filters( "revealTrans" ).apply();
+            image2.style.visibility = "hidden";
+            image2.filters( "revealTrans" ).play();
+         } 
+      }
+
+      function reBlend( fromImage )
+      {
+         counter++;
+
+         if ( fromImage ) {
+            image1.style.zIndex -= 2;
+            image1.style.visibility = "visible";
+            image2.filters("revealTrans").transition = 
+               counter % 24;
+         }
+         else {
+            image1.style.zIndex += 2;
+            image2.style.visibility = "visible";
+            image1.filters("revealTrans").transition = 
+               counter % 24;
+         }
+
+         whichImage = !whichImage;
+         blend();
+         transitionDisplay.innerHTML = "Transition " + 
+            counter % 24 + ": " + transitionName[ counter % 24 ];
+      }
+      // -->
+   </script>
+   </head>
+
+   <body style = "color: white; background-color: lightcoral" 
+         onload = "blend()">
+
+      <img id = "image2" src = "e:\vineel\photos\bumika\b1.jpg" 
+           style = "position: absolute; left: 10; top: 10; 
+           width: 300; z-index:1; visibility: visible;
+           filter: revealTrans( duration = 2, transition = 0 )" 
+           onfilterchange = "reBlend( false )" alt = 
+           "Programming Tips" />
+
+      <img id = "image1" src = "e:\vineel\photos\bumika\b2.jpg" 
+           style = "position: absolute; left: 10; top: 10; 
+           width: 300; z-index:1; visibility: visible;
+           filter: revealTrans( duration = 2, transition = 0 )"
+           onfilterchange = "reBlend( true )" alt = "Icons" />
+
+      <div id = "transitionDisplay" style = "position: absolute; 
+         top: 70; left: 80">Transition 0: Box In</div>
+
+   </body>
+</html>
+
+

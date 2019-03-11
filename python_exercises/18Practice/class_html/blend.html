@@ -1,0 +1,61 @@
+<html>
+   <head>
+      <title>Blend Transition II</title>
+
+      <script type = "text/javascript">
+         <!--
+         var whichImage = true;
+
+         function blend() 
+         {
+            if ( whichImage ) {
+               image1.filters( "blendTrans" ).apply();
+               image1.style.visibility = "hidden";
+               image1.filters( "blendTrans" ).play();
+            }
+            else {
+               image2.filters( "blendTrans" ).apply();
+               image2.style.visibility = "hidden";
+               image2.filters( "blendTrans" ).play();
+            } 
+         }
+
+         function reBlend ( fromImage ) 
+         {
+            if ( fromImage ) {
+               image1.style.zIndex -= 2;
+               image1.style.visibility = "visible";
+            }
+            else {
+               image1.style.zIndex += 2;
+               image2.style.visibility = "visible";
+            }
+   
+            whichImage = !whichImage;
+            blend();
+         }
+         // -->
+      </script>
+   </head>
+
+   <body style = "color: darkblue; background-color: lightblue" 
+         onload = "blend()">
+
+      <h1>Blend Transition Demo</h1>
+
+      <img id = "image2" src = "e:\vineel\photos\bumika\b1.jpg" 
+      onfilterchange = "reBlend( false )" 
+      style = "position: absolute; left: 50; top: 50; 
+      width: 300; filter: blendTrans( duration = 4 ); 
+      z-index: 1" alt = "First Transition Image"  />
+
+      <img id = "image1" src = "e:\vineel\photos\bumika\b2.jpg" 
+      onfilterchange = "reBlend( true )" 
+      style = "position: absolute; left: 50; top: 50; 
+      width: 300; filter: blendTrans( duration = 4 ); 
+      z-index: 2" alt = "Second Transition Image"  />
+
+   </body>
+</html>
+
+

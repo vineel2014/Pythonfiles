@@ -1,0 +1,25 @@
+1) Odd/Even
+
+2) Sum of all digits of a number:
+	- You can use an iterator
+	- Convert types of a variable using - int(), str(), tuple(), list() etc.
+	
+3) Find the divisors of a number:
+	- assign a blank list/tuple:
+		list = []
+		tuple = ()
+	- to store values in a list :
+		list = list + [i]
+	- to store values in a tuple:
+		tuple = tuple + (i,)
+
+4) Find out the square Root of a perfect square : example = 4, 9, 16, 25, 36 etc
+	- For finding sqrt of 9:
+		 1*1 = 1 - not the answer
+		 2*2 = 4 - not the answer
+		 3*3 = 9 - is the answer
+
+5) Find the square root of any real number: example = 1,2,3,4,5,6.....
+	- The answer can be correct to some decimal points that the user will give.
+	i.e if user gives .001 accuracy. Sqrt. of 9 can be 2.999
+	 

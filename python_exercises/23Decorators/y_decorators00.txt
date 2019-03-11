@@ -1,0 +1,8 @@
+def deco(func):
+	something...
+	
+@deco
+def foo(): 
+	pass
+
+foo = deco(foo)
